@@ -1,8 +1,8 @@
 <footer class="main-footer">
     <div class="container">
       <div class="pull-right hidden-xs">
-        <b>All rights reserved</b>
+        <b>All rights Reserved</b>
       </div>
-      <strong>Copyright &copy; 2018 <a href="https://www.sourcecodester.com/">SourceCodeSter</a></strong>
+      <strong>Copyright &copy; 2025 <a href="">PrintsCharming</a></strong>
     </div>
 </footer>
