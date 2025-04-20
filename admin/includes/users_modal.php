@@ -95,14 +95,14 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="edit_firstname" class="col-sm-3 control-label">Firstname</label>
+                    <label for="edit_firstname" class="col-sm-3 control-label">First Name</label>
 
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="edit_firstname" name="firstname">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="edit_lastname" class="col-sm-3 control-label">Lastname</label>
+                    <label for="edit_lastname" class="col-sm-3 control-label">Last Name</label>
 
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="edit_lastname" name="lastname">

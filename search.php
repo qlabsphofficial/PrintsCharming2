@@ -10,7 +10,7 @@
 
 	      <!-- Main content -->
 	      <section class="content">
-	        <div class="row">
+	        <div>
 	        	<div class="col-sm-9">
 	            <?php
 	       			
@@ -61,9 +61,6 @@
 					$pdo->close();
 
 	       		?> 
-	        	</div>
-	        	<div class="col-sm-3">
-	        		<?php include 'includes/sidebar.php'; ?>
 	        	</div>
 	        </div>
 	      </section>

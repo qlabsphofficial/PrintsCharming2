@@ -26,7 +26,7 @@
       }
     ?>
   	<div class="login-box-body">
-    	<p class="login-box-msg text-3xl font-bold">Login</p>
+    	<p class="login-box-msg">Login</p>
 
     	<form action="verify.php" method="POST">
       		<div class="form-group has-feedback">
