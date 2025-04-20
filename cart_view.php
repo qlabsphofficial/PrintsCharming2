@@ -41,6 +41,11 @@
 	        				";
 	        			}
 	        		?>
+
+					<button onclick="simulateSuccessTransaction()">Proceed Payment</button>
+	        	</div>
+	        	<div class="col-sm-3">
+	        		<?php include 'includes/sidebar.php'; ?>
 	        	</div>
 	        </div>
 	      </section>
@@ -152,7 +157,7 @@ function getTotal(){
 }
 </script>
 <!-- Paypal Express -->
-<script>
+<!-- <script>
 paypal.Button.render({
     env: 'sandbox', // change for production if app is live,
 
@@ -191,6 +196,15 @@ paypal.Button.render({
     },
 
 }, '#paypal-button');
+</script> -->
+
+<script>
+function simulateSuccessTransaction() {
+    const fakePaymentId = 'TXN_' + Date.now();
+
+    window.location = 'sales.php?pay=' + fakePaymentId;
+}
 </script>
+
 </body>
 </html>
