@@ -15,25 +15,6 @@
 		$_SESSION['lastname'] = $lastname;
 		$_SESSION['email'] = $email;
 
-		if(!isset($_SESSION['captcha'])){
-			require('recaptcha/src/autoload.php');		
-			// $recaptcha = new \ReCaptcha\ReCaptcha('6LcxXmIaAAAAAFSY6wjaHDl65lmpTyXu-iBYBhp3', new \ReCaptcha\RequestMethod\SocketPost());
-			$recaptcha = new \ReCaptcha\ReCaptcha('6LcxXmIaAAAAAFSY6wjaHDl65lmpTyXu-iBYBhp3');
-			$resp = $recaptcha->setExpectedHostname($_SERVER['SERVER_NAME'])
-                      ->verify($_POST['g-recaptcha-response'], $_SERVER['REMOTE_ADDR']);
-			// $resp = $recaptcha->verify($_POST['g-recaptcha-response'], $_SERVER['REMOTE_ADDR']);
-
-			if (!$resp->isSuccess()){
-		  		$_SESSION['error'] = 'Please answer recaptcha correctly';
-		  		header('location: signup.php');	
-		  		exit();	
-		  	}	
-		  	else{
-		  		$_SESSION['captcha'] = time() + (10*60);
-		  	}
-
-		}
-
 		if($password != $repassword){
 			$_SESSION['error'] = 'Passwords did not match';
 			header('location: signup.php');
@@ -67,7 +48,7 @@
 						<p>Email: ".$email."</p>
 						<p>Password: ".$_POST['password']."</p>
 						<p>Please click the link below to activate your account.</p>
-						<a href='http://localhost/ecommerce/activate.php?code=".$code."&user=".$userid."'>Activate Account</a>
+						<a href='http://localhost/PrintsCharming/activate.php?code=".$code."&user=".$userid."'>Activate Account</a>
 					";
 
 					//Load phpmailer
@@ -79,8 +60,8 @@
 				        $mail->isSMTP();                                     
 				        $mail->Host = 'smtp.gmail.com';                      
 				        $mail->SMTPAuth = true;                               
-				        $mail->Username = '';     
-				        $mail->Password = '';                    
+				        $mail->Username = 'printscharming.notification@gmail.com';     
+				        $mail->Password = 'wdds ewyu fprt bulw';                    
 				        $mail->SMTPOptions = array(
 				            'ssl' => array(
 				            'verify_peer' => false,
@@ -91,15 +72,15 @@
 				        $mail->SMTPSecure = 'ssl';                           
 				        $mail->Port = 465;                                   
 
-				        $mail->setFrom('testsourcecodester@gmail.com');
+				        $mail->setFrom('printscharming.notification@gmail.com');
 				        
 				        //Recipients
 				        $mail->addAddress($email);              
-				        $mail->addReplyTo('testsourcecodester@gmail.com');
+				        $mail->addReplyTo('printscharming.notification@gmail.com');
 				       
 				        //Content
 				        $mail->isHTML(true);                                  
-				        $mail->Subject = 'ECommerce Site Sign Up';
+				        $mail->Subject = 'Prints Charming Site Sign Up';
 				        $mail->Body    = $message;
 
 				        $mail->send();
